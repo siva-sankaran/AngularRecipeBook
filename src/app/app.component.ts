@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'theBasicsCourseProject';
+  isShoppingVisible: boolean;
+
+  OnMenuSelected(selectedMenuName: string){
+    this.isShoppingVisible = selectedMenuName === "shopping";
+  }
 }
