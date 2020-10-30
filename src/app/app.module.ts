@@ -11,6 +11,7 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { ShoppingEditComponent } from './shopping/shoppingEdit/shoppingEdit.component'
 import { FormsModule } from '@angular/forms';
 import { DropDownDirective } from './shared/dropdown.directive';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,12 @@ import { DropDownDirective } from './shared/dropdown.directive';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: RecipesComponent},
+      { path: 'recipes', component: RecipesComponent},
+      { path: 'shoppinglist', component: ShoppingComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
