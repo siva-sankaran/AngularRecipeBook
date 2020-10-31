@@ -30,7 +30,9 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: RecipesComponent},
-      { path: 'recipes', component: RecipesComponent},
+      { path: 'recipes', component: RecipesComponent, children: [
+        { path: ':id', component: RecipeDetailComponent}
+      ]},
       { path: 'shoppinglist', component: ShoppingComponent}
     ])
   ],

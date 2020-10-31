@@ -13,8 +13,4 @@ export class RecipeItemComponent{
     constructor(private recipeManager: RecipesService){
 
     }
-
-    OnClick(){
-        this.recipeManager.OnSelectingRecipe.emit(this.recipe);
-    }
 }

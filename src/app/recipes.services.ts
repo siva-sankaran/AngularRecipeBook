@@ -10,18 +10,21 @@ export class RecipesService{
 
     }
     recipes: Recipe[] = [
-        new Recipe('Dosai', 
+        new Recipe(1, 'Dosai', 
         'a tasty breakfast', 
         'https://www.jeyashriskitchen.com/wp-content/uploads/2016/02/mysore-masala-dosai.jpg',
         [new Ingredient("Rice", 2) , new Ingredient("Urad Dal", 4)]),
-        new Recipe('Idly', 
+        new Recipe(2, 'Idly', 
         'another tasty breakfast', 
         'https://4.bp.blogspot.com/-quw-Ozl-WD8/T7BxQ4wxrlI/AAAAAAAAPmI/w-8czP8jfRg/s1600/idly+middle.jpg',
         [new Ingredient("Rice", 2) , new Ingredient("Urad Dal", 4)])
     ];
-    @Output() OnSelectingRecipe = new EventEmitter<Recipe>();
 
     AddToShoppingList(ingredients:Ingredient[]){
         this.shoppingManager.AddIngredients(ingredients);
+    }
+
+    getRecipeById(id:number){
+        return this.recipes.find(r => r.id == id);
     }
 }
